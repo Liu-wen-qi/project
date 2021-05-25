@@ -1,154 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>后台管理</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/Table.css">
-	<script src="/javascripts/jquery.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-	<div class="search">
-		<form action="add/search" method="POST">
-			<input type="text" required placeholder="请输入您想搜索的用户名" name="name" />
-			<input type="submit" required value="提交" />
-		</form>
-	</div>
-
-	<table>
-		<thead>
-			<tr>
-				<form action="" method="POST">
-					<td><input type="text" name="name" required></td>
-					<td><input type="text" name="pass" required></td>
-					<td><input type="text" name="cpass" required></td>
-					<td><input type="text" name="sname" required></td>
-					<td><input type="text" name="phone" required></td>
-					<td><input type="text" name="emil" required></td>
-					
-					<td><input type="submit"></td>
-				</form>
-			</tr>
-			<tr>
-				<td></span></td>
-				<td>用户名<span class="upBtn"></span><span class="downBtn"></td>
-				<td>密码<span class="upBtn"></span><span class="downBtn"></td>
-				<td>确认密码<span class="upBtn"></span><span class="downBtn"></td>
-				<td>手机号码<span class="upBtn"></span><span class="downBtn"></td>
-			    <td>邮箱<span class="upBtn"></span><span class="downBtn"></td>
-			</tr>
-		</thead>
-		<tbody id="Change">
-			<% for (let i of detial) { %>
-				<tr>
-					<td>
-						<%= i.name %>
-					</td>
-					<td>
-						<%=i.pass %>
-					</td>
-					<td>
-						<%=i.cpass %>
-					</td>
-					<td>
-						<%=i.sname %>
-					</td>
-					<td>
-						<%=i.phone %>
-					</td>
-					<td>
-						<%=i.email %>
-					</td>
-					<td><input type="button" value="删除" onclick="deletTr(this)" formaction="" formmethod="POST" /></td>
-					<td><input type="button" value="更改" onclick="change(this)" /></td>
-				</tr>
-				<% } %>
-		</tbody>
-		<tfoot>
-			<td colspan="7">
-				<input type="button" value="上一页" id="lastPage">
-				<% for (let i=1 ; i<=Allpages ; i++ ){ %>
-					<input type="button" class="pages" value=<%=i %> >
-					<% } %>
-						<input type="button" value="下一页" id="nextPage">
-			</td>
-		</tfoot>
-	</table>
-	<div id="change" class="change">
-		<div class="inside">
-			<div class="false" id="false">X</div>
-			<form action="demo1/change" method="POST">
-				<input type="text" placeholder="请输入您要搜索的用户名" required name="name">
-				<input type="text" placeholder="请输入您要搜索的密码" required name="pass">
-				<input type="text" placeholder="请输入您要搜索的别名" required name="sname">
-				<input type="text" placeholder="请输入您要搜索的手机号码" required name="phone">
-				<input type="text" placeholder="请输入您要搜索邮箱" required name="emil">
-				<input type="submit" value="确定">
-			</form>
-		</div>
-	</div>
-	<script type="text/javascript" src="javascripts/Table.js"></script>
-	<script>
-		$("#nextPage").click(function () {
-			let name = (this.parentElement.parentElement.parentElement.parentElement.children[1].children[0].children[0].innerHTML)
-			$.ajax({
-				type: "post",
-				url: "http://localhost:3000/add/nextPage/"+name,
-				success: function (data) {
-					document.getElementById("Change").innerHTML = data.map(i =>
-						`<tr>
-				<td>${i.name}</td>
-				<td>${i.pass}</td>
-				<td>${i.cpass}</td>
-				<td>${i.sname}</td>
-				<td>${i.phone}</td>
-				<td>${i.emil}</td>
-				<td><input type="button" value="删除" onclick="deletTr(this)" formaction="" formmethod="POST"/></td>
-				<td><input type="button" value="更改" onclick="change(this)"/></td>
-			</tr>`).join("");
-				}
-			});
-		})
-		$("#lastPage").click(function () {
-		let name = (this.parentElement.parentElement.parentElement.parentElement.children[1].children[0].children[0].innerHTML)
-			$.ajax({
-				type: "post",
-				url: "http://localhost:3000/add/lastPage/"+name,
-				success: function (data) {
-						document.getElementById("Change").innerHTML = data.map(i =>
-							`<tr>
-				<td>${i.name}</td>
-				<td>${i.Chinese}</td>
-				<td>${i.math}</td>
-				<td>${i.English}</td>
-				<td>${i.total}</td>
-				<td><input type="button" value="删除" onclick="deletTr(this)" formaction="" formmethod="POST"/></td>
-				<td><input type="button" value="更改" onclick="change(this)"/></td>
-			</tr>`).join("");
-				}
-			})
-		})
-		$(".pages").click(function () {
-			$.ajax({
-				type: "post",
-				url: "http://localhost:3000/add/page/" + this.value,
-				success: function (data) {
-						document.getElementById("Change").innerHTML = data.map(i =>
-							`<tr>
-				<td>${i.name}</td>
-				<td>${i.pass}</td>
-				<td>${i.cpass}</td>
-				<td>${i.sname}</td>
-				<td>${i.phone}</td>
-				<td>${i.emil}</td>
-				<td><input type="button" value="删除" onclick="deletTr(this)" formaction="" formmethod="POST"/></td>
-				<td><input type="button" value="更改" onclick="change(this)"/></td>
-			</tr>`).join("");
-				}
-			})
-		})
-	</script>
+    <form action="/add" method="POST">
+        <input type="hidden" name="id"  />
+        <input type="text" name="name"  placeholder="用户名"/>
+        <br/>
+        <input type="number" name="pass"  placeholder="密码"/>
+        <br/>
+        <input type="text" name="cpass"  placeholder="确认密码"/>
+        <br/>
+        <input type="text" name="sname"  placeholder="别名"/>
+        <br/>
+        <input type="text" name="phone"  placeholder="手机号码"/>
+        <br/>
+        <input type="text" name="email"  placeholder="邮箱"/>
+        <br/>
+        <button class="button">提交</button>
+    </form>
 </body>
-
 </html>

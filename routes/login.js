@@ -57,10 +57,10 @@ connection.connect();
                       }
                       else {
                         if(req.body.name=="liuliu"&&req.body.pass ==0710){
-                          res.redirect('/index');
+                          res.redirect('/manager');
             }else{
           
-            res.redirect('/add');  
+            res.redirect('/index');  
                       }
         }
       }
