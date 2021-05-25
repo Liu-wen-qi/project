@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台管理数据</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/Table.css">
+</head>
+<body>	
+	<table>
+		<thead>
+			<tr>
+				<td>注册</span></td>
+				<td>用户名<span class="upBtn"></span><span class="downBtn"></td>
+				<td>密码<span class="upBtn"></span><span class="downBtn"></td>
+				<td>确认密码<span class="upBtn"></span><span class="downBtn"></td>
+				<td>别名<span class="upBtn"></span><span class="downBtn"></td>
+				<td>手机号码<span class="upBtn"></span><span class="downBtn"></td>
+				<td>邮箱<span class="upBtn"></span><span class="downBtn"></td>
+			</tr>
+		</thead>
+		<tbody>
+			<%
+			for (let i of detial) {
+				%>
+			<tr>
+				<td><%=i.name %></td>
+				<td><%=i.pass %></td>
+				<td><%=i.cpass %></td>
+				<td><%=i.sname%></td>
+				<td><%=i.phone %></td>
+				<td><%=i.mail %></td>
+				
+			</tr>
+			<%
+			}
+			%>
+		</tbody>
+	</table>
+	<script type="text/javascript" src="../javascripts/Table.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+</head>
+<style>
+
+
+</style>
+
+    <body>
+        <div class="container">
+            <div class="panel">
+                <div class="content">
+                    <div class="switch">
+                        <h1 id="login">登录</h1>
+                    </div>
+
+    <form action="/login" method="post" >
+
+        <div  id="userName" class="input" aria-placeholder="用户名"><input type="text" name="name"></div>
+        <div  id="password" class="input" aria-placeholder="密码"><input type="password" name="pass"></div>
+
+        <p>
+            <a href="/register" target="_blank">立即注册</a>
+            
+            <span>|</span>
+            <a id="forget" href="/forget" class="input">忘记密码？</a>
+        </p>
+        <button class="button">登录</button>
+    </form>
+</div>
+</div>
+</div>
+</body>
+
