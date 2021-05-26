@@ -32,6 +32,7 @@ var formsRouter = require('./routes/forms');
 var chartsRouter  = require('./routes/charts');
 
 var addRouter = require('./routes/add');
+// var course = require('./routes/course');
 
 
 
@@ -64,6 +65,7 @@ app.use('/register', registerRouter);
 // app.use('/service', serviceRouter);
 app.use('/team',teamRouter)
 app.use('/add',addRouter);
+// app.use('/course',courseRouter);
 
 //管理员页面
 app.use('/manager',managerRouter);
