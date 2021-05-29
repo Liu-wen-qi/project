@@ -31,6 +31,8 @@ var tablesRouter = require('./routes/tables');
 var formsRouter = require('./routes/forms');
 var chartsRouter  = require('./routes/charts');
 
+var backgroundRouter = require('./routes/background');//后台主页面
+
 var addRouter = require('./routes/add');
 // var course = require('./routes/course');
 
@@ -68,6 +70,8 @@ app.use('/add',addRouter);
 // app.use('/course',courseRouter);
 
 //管理员页面
+app.use('/background',backgroundRouter);
+
 app.use('/manager',managerRouter);
 app.use('/login1',login1Router);
 app.use('/register1',register1Router);
