@@ -17,9 +17,9 @@ connection.connect();
 router.get('/', function (req, res) {
     var selectSQL = "select * from register " 
       connection.query(selectSQL, function (err, results, fields){
-        console.log(err);
-        console.log(results);
-        console.log(fields);
+//         console.log(err);
+//         console.log(results);
+//         console.log(fields);
         res.render('add',{detail:results} );
       
         });

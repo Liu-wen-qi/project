@@ -8,20 +8,17 @@
 </head>
 
 <body>
-    <form action="/add" method="POST">
+    <form action="/admin/add" method="POST">
         <input type="hidden" name="id"  />
-        <input type="text" name="name"  placeholder="用户名"/>
+        <input type="text" name="title"  placeholder="title"/>
         <br/>
-        <input type="number" name="pass"  placeholder="密码"/>
+        <input type="number" name="location"  placeholder="location"/>
         <br/>
-        <input type="text" name="cpass"  placeholder="确认密码"/>
+        <input type="text" name="number"  placeholder="number"/>
         <br/>
-        <input type="text" name="sname"  placeholder="别名"/>
-        <br/>
-        <input type="text" name="phone"  placeholder="手机号码"/>
-        <br/>
-        <input type="text" name="email"  placeholder="邮箱"/>
-        <br/>
+        <input type="text" name="nmeassage"  placeholder="nmeassage"/>
+        <br/> 
+        <input type="submit"/>
         <button class="button">提交</button>
     </form>
 </body>

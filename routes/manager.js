@@ -1,27 +1,27 @@
-const { json } = require('express');
-var express = require('express');
-var router = express.Router();
-var path = require('path');
-let data = new Array();
+// const { json } = require('express');
+// var express = require('express');
+// var router = express.Router();
+// var path = require('path');
+// let data = new Array();
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "project1"
-});
+// var mysql = require('mysql');
+// var connection = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: "root",
+//     database: "project1"
+// });
 
 
-router.get('/',(req,res) => {
-   connection.query("select * from register order by id desc limit 0,6",function(err,results){
-     var datastring = JSON.stringify(results);
-    var data = JSON.parse(datastring);
-    res.render('manager',{
-      "detail":data
-    });
-  })
-});
+// router.get('/',(req,res) => {
+//    connection.query("select * from register order by id desc limit 0,6",function(err,results){
+//      var datastring = JSON.stringify(results);
+//     var data = JSON.parse(datastring);
+//     res.render('manager',{
+//       "detail":data
+//     });
+//   })
+// });
 
 // router.get('/delete:id',(req,res) =>{
 //   connection.query("delect from pro_manager where id ='"+req.params.id+"'",function(err,results,fields){
@@ -34,7 +34,18 @@ router.get('/',(req,res) => {
 // });
 
 
-router.get('/addpage',(req,res) =>{
-  res.render('add',{obj:{},id:""});
+// router.get('/addpage',(req,res) =>{
+//   res.render('add',{obj:{},id:""});
+// });
+// module.exports = router;
+
+
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('manager', { title: 'Express' });
 });
-module.exports = router;
+
+module.exports = router;

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/admin" method="POST">
+        <input type="text" name="search" placeholder="搜索"/>
+        <input type="submit"/>
+    </form>
+    
+
+    <input typle="button" value="add" onclick="add()">
+    <table>
+        <% for(var o of data){
+            %>
+            <tr>
+                <td><%=o.id %></td>
+                <td><%=o.title %></td>
+                <td><%=o.location %></td>
+                <td><%=o.number %></td>
+                <td><%=o.nmessage %></td>
+                <td>
+                    <input type="button" class="upd" data_id="<%=o.idvalue="修改"/>
+                    <input type="button" value="删除"/>
+                </td>
+            </tr>
+            <% }%>
+
+    </table>
+    <script>
+        function add(){
+            window.location.href ="/admin/add";
+        }
+        Array.from(document.getElementsByClassName("upd")).forEach(i =>{
+            i.onclick = function(){
+                this.getAttribute('data_id');
+
+               window.location.href="/admin/update/"+this.getAttribute('data_id');
+            }
+        })
+    </script>
+    
+</body>
+</html>
