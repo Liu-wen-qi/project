@@ -58,7 +58,7 @@ connection.connect();
                       }
                       else {
                         if(req.body.name=="liuliu"&&req.body.pass ==0710){
-                          res.redirect('/manager');
+                          res.redirect('/background');
             }else{
           
             res.redirect('/index');  

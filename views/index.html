@@ -310,28 +310,38 @@
                 <h3 class="tittle-w3l text-center mb-lg-5 mb-3">
                     <span>Visit</span>探索新课程</h3>
                 <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="cource-box-info text-center rounded">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="images/g3.jpg" alt="Collegien" class="img-fluid">
-                                    <h5 class="card-title mt-3">学习设计
-                                    </h5>
-                                    <p class="card-text">
-                                        <i class="fas fa-map-marker-alt"></i> 英国</p>
-                                        <ul class="property-box">
-                                            <li class="field-item text-left">
-                                                
-                                                <i class="fas fa-users"></i> 195 </li>
-                                            <li class="field-item text-right">
-    
-                                                <i class="far fa-comments"></i> 26 </li>
-                                        </ul>
+                    <% 
+                            for(var o of data){
+                            %>
+                            <div class="item">
+                                <div class="cource-box-info text-center rounded">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="images/g3.jpg" alt="Collegien" class="img-fluid">
+                                            <h5 class="card-title mt-3"><%=o.title %>
+                                            </h5>
+                                            <p class="card-text">
+                                                <i class="fas fa-map-marker-alt"></i><%=o.location %></p>
+                                                <ul class="property-box">
+                                                    <li class="field-item text-left">
+                                                        
+                                                        <i class="fas fa-users"></i><%=o.number %> </li>
+                                                    <li class="field-item text-right">
+            
+                                                        <i class="far fa-comments"></i> <%=o.nmessage %> </li>
+                                                </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="item">
+                            <%
+                                }
+                            %>
+
+
+                    
+                   
+                    <!-- <div class="item">
                         <div class="cource-box-info text-center rounded">
                             <div class="card">
                                 <div class="card-body">
@@ -435,53 +445,51 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </div>
     </section>
-    <!--//courses-->
-      <!--//courses-->
-
-      <!-- <section class="stats_test container-fluid">
-		<div class="row inner-sec-wthree-w3ls">
-			<div class="col-sm-4 col-6 py-5 stats_info counter_grid">
-				<i class="far fa-building"></i>
-				<p class="counter">145</p>
-				<h4>分支</h4>
-			</div>
-			<div class="col-sm-4 col-6 py-5 stats_info counter_grid1">
-				<i class="far fa-edit"></i>
-				<p class="counter">563</p>
-				<h4>项目</h4>
-			</div>
-			<div class="col-sm-4 col-6 py-5 stats_info counter_grid2">
-				<i class="far fa-smile"></i>
-				<p class="counter">1045</p>
-				<h4>快乐用户</h4>
-			</div>
-		</div>
-    </section>
     
-    //courses -->
+
       <!--/news-->
         <section class="offer-service-w3ls py-md-5 py-4">
         <div class="container">
             <div class="inner-sec-wthree-w3ls py-md-5 py-4">
                 <h3 class="tittle-w3l text-center mb-lg-5 mb-3">
                     <span>我们提供</span>你在寻找什么？ </h3>
-                <div class="row">
-                    <div class="col-lg-4 service-in text-center">
+                <!-- <div class="row">
+                    <% 
+                            for(var a of data1){
+                            %>
+                            <div class="col-lg-4 service-in text-center">
 					<div class="card">
 						<div class="card-body">
 							<i class="fab fa-react"></i>
-							<h5 class="card-title">巨型图书馆</h5>
-							<p class="card-text">书籍是人类进步的阶梯，网络图书馆，提供免费网上阅读机会，让图书随时随地可以看
+							<h5 class="card-title"><%=o.title %></h5>
+							<p class="card-text"><%=o.detail %>
 							</p>
 						</div>
 					</div>
 				</div>
+                            <%
+                                }
+                            %> -->
+                            <div class="col-lg-4 service-in text-center">
+                                <div class="card">
+                                <div class="card-body">
+                                    <i class="fas fa-flask"></i>
+                                    <h5 class="card-title">图书馆</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore.
+                                    </p>
+                                </div>
+                            </div>
+                               
+                            </div>
+
+
+                    
                     <div class="col-lg-4 service-in text-center">
                         <div class="card">
 						<div class="card-body">
