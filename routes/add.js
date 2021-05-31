@@ -17,19 +17,17 @@ connection.connect();
 router.get('/', function (req, res) {
     var selectSQL = "select * from register " 
       connection.query(selectSQL, function (err, results, fields){
-//         console.log(err);
-//         console.log(results);
-//         console.log(fields);
+        console.log(err);
+        console.log(results);
+        console.log(fields);
         res.render('add',{detail:results} );
       
         });
   });
-
 router.post('/', (req, res) => {
-
     var insertSql = 'insert into register(name,pass,cpass,sname,phone,email) values(?,?,?,?,?,?)';
     connection.query(insertSql, [req.body.name,req.body.pass,req.body.cpass,req.body.sname,req.body.phone,req.body.email], function (err, result, fields) {
-    
+
         if (err) {
             console.log('err', err);
             return;

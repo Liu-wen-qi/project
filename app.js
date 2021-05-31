@@ -21,7 +21,7 @@ var contactRouter = require('./routes/contact');
 var galleryRouter = require('./routes/gallery');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
-// var serviceRouter = require('./routes/service');
+
 var teamRouter = require('./routes/team');
 //管理员页面
 var managerRouter = require('./routes/manager');
@@ -34,7 +34,9 @@ var chartsRouter  = require('./routes/charts');
 var backgroundRouter = require('./routes/background');//后台主页面
 var adminRouter = require('./routes/admin');
 var addRouter = require('./routes/add');
-// var course = require('./routes/course');
+var updateRouter = require('./routes/update');
+
+
 
 
 
@@ -58,16 +60,18 @@ app.use(cookieParser('exercise',));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/index', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/contact',contactRouter);
 app.use('/gallery', galleryRouter);
 app.use('/', loginRouter);
 app.use('/register', registerRouter);
-// app.use('/service', serviceRouter);
+
 app.use('/team',teamRouter)
 app.use('/add',addRouter);
-// app.use('/course',courseRouter);
+app.use('/update',updateRouter);
+
 
 //管理员页面
 app.use('/background',backgroundRouter);

@@ -310,148 +310,34 @@
                 <h3 class="tittle-w3l text-center mb-lg-5 mb-3">
                     <span>Visit</span>探索新课程</h3>
                 <div class="owl-carousel owl-theme">
-                    <% 
-                            for(var o of data){
-                            %>
-                            <div class="item">
-                                <div class="cource-box-info text-center rounded">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="images/g3.jpg" alt="Collegien" class="img-fluid">
-                                            <h5 class="card-title mt-3"><%=o.title %>
-                                            </h5>
-                                            <p class="card-text">
-                                                <i class="fas fa-map-marker-alt"></i><%=o.location %></p>
-                                                <ul class="property-box">
-                                                    <li class="field-item text-left">
-                                                        
-                                                        <i class="fas fa-users"></i><%=o.number %> </li>
-                                                    <li class="field-item text-right">
-            
-                                                        <i class="far fa-comments"></i> <%=o.nmessage %> </li>
-                                                </ul>
-                                        </div>
+                    <%
+                    for (var o of data){
+                        %>
+                        <div class="item">
+                            <div class="cource-box-info text-center rounded">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="images/g1.jpg" alt="Collegien" class="img-fluid">
+                                        <h5 class="card-title mt-3"><%= o.title %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <i class="fas fa-map-marker-alt"></i> <%= o.location %></p>
+                                            <ul class="property-box">
+                                                <li class="field-item text-left">
+                                                    <i class="fas fa-users"></i> <%= o.number %> </li>
+                                                <li class="field-item text-right">
+        
+                                                    <i class="far fa-comments"></i> <%= o.nmessage%> </li>
+                                            </ul>
                                     </div>
                                 </div>
                             </div>
-                            <%
-                                }
-                            %>
-
-
-                    
-                   
-                    <!-- <div class="item">
-                        <div class="cource-box-info text-center rounded">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="images/g1.jpg" alt="Collegien" class="img-fluid">
-                                    <h5 class="card-title mt-3">学习摄影
-                                    </h5>
-                                    <p class="card-text">
-                                        <i class="fas fa-map-marker-alt"></i> 纽约</p>
-                                        <ul class="property-box">
-                                            <li class="field-item text-left">
-                                                
-                                                <i class="fas fa-users"></i> 155 </li>
-                                            <li class="field-item text-right">
-    
-                                                <i class="far fa-comments"></i> 15 </li>
-                                        </ul>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="cource-box-info text-center rounded">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="images/g2.jpg" alt="Collegien" class="img-fluid">
-                                    <h5 class="card-title mt-3">学习绘画
-                                    </h5>
-                                    <p class="card-text">
-                                        <i class="fas fa-map-marker-alt"></i> 中国北京</p>
-                                        <ul class="property-box">
-                                            <li class="field-item text-left">
-                                                
-                                                <i class="fas fa-users"></i> 155 </li>
-                                            <li class="field-item text-right">
-    
-                                                <i class="far fa-comments"></i> 25 </li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cource-box-info text-center rounded">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="images/g4.jpg" alt="Collegien" class="img-fluid">
-                                    <h5 class="card-title mt-3">学习医学
-                                    </h5>
-                                    <p class="card-text">
-                                        <i class="fas fa-map-marker-alt"></i> 中国上海</p>
-                                        <ul class="property-box">
-                                            <li class="field-item text-left">
-                                                
-                                                <i class="fas fa-users"></i> 255 </li>
-                                            <li class="field-item text-right">
-    
-                                                <i class="far fa-comments"></i> 15 </li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cource-box-info text-center rounded">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="images/g5.jpg" alt="Collegien" class="img-fluid">
-                                    <h5 class="card-title mt-3">学习法学
-                                    </h5>
-                                    <p class="card-text">
-                                        <i class="fas fa-map-marker-alt"></i> 中国西安</p>
-                                        <ul class="property-box">
-                                            <li class="field-item text-left">
-                                                
-                                                <i class="fas fa-users"></i> 395 </li>
-                                            <li class="field-item text-right">
-    
-                                                <i class="far fa-comments"></i> 25 </li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="cource-box-info text-center rounded">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="images/g6.jpg" alt="Collegien" class="img-fluid">
-                                    <h5 class="card-title mt-3">学习工学
-                                    </h5>
-                                    <p class="card-text">
-                                        <i class="fas fa-map-marker-alt"></i> 广州</p>
-                                    <ul class="property-box">
-                                        <li class="field-item text-left">
-                                            
-                                            <i class="fas fa-users"></i> 355 </li>
-                                        <li class="field-item text-right">
-
-                                            <i class="far fa-comments"></i> 25 </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
+                            <% } %>
                 </div>
             </div>
         </div>
     </section>
-    
 
       <!--/news-->
         <section class="offer-service-w3ls py-md-5 py-4">
@@ -459,23 +345,6 @@
             <div class="inner-sec-wthree-w3ls py-md-5 py-4">
                 <h3 class="tittle-w3l text-center mb-lg-5 mb-3">
                     <span>我们提供</span>你在寻找什么？ </h3>
-                <!-- <div class="row">
-                    <% 
-                            for(var a of data1){
-                            %>
-                            <div class="col-lg-4 service-in text-center">
-					<div class="card">
-						<div class="card-body">
-							<i class="fab fa-react"></i>
-							<h5 class="card-title"><%=o.title %></h5>
-							<p class="card-text"><%=o.detail %>
-							</p>
-						</div>
-					</div>
-				</div>
-                            <%
-                                }
-                            %> -->
                             <div class="col-lg-4 service-in text-center">
                                 <div class="card">
                                 <div class="card-body">
@@ -747,8 +616,8 @@
 
 
     <!--model-forms-->
-    <!--/Login-->
-    <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- /Login-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
@@ -759,8 +628,8 @@
                 <div class="modal-body">
 
                     <div class="login px-4 mx-auto mw-100">
-                        <h5 class="text-center mb-4"  href="./login">Login Now</h5> -->
-                        <!-- <form action="#" method="post">
+                        <h5 class="text-center mb-4"  href="./login">Login Now</h5>
+                        <form action="#" method="post">
                             <div class="form-group">
                                 <label class="mb-2">Emailaddress</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
@@ -778,7 +647,7 @@
                             <p class="text-center pb-4">
                                 <a href="#" data-toggle="modal2" data-target="#exampleModalCenter"> Don't have an account?</a>
                             </p>
-                        </form> -->
+                        </form>
                     </div>
                 </div>
 
@@ -787,7 +656,7 @@
     </div>
     <!--//Login-->
     <!--/Register-->
-    <!-- <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
@@ -797,8 +666,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="login px-4 mx-auto mw-100">
-                        <h5 class="text-center mb-4" href="./register">Register Now</h5> -->
-                        <!-- <form action="#" method="post">
+                        <h5 class="text-center mb-4" href="./register">Register Now</h5>
+                        <form action="#" method="post">
                             <div class="form-group">
                                 <label>Firstname</label>
 
@@ -822,7 +691,7 @@
                             <p class="text-center pb-4">
                                 <a href="#">By clicking Register, I agree to your terms</a>
                             </p>
-                        </form> -->
+                        </form>
 
                     </div>
                 </div>

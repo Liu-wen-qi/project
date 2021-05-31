@@ -8,13 +8,11 @@
 <body>
     <form action="/admin" method="POST">
         <input type="text" name="search" placeholder="搜索"/>
-        <input type="submit"/>
+        <input type="submit"/>     
     </form>
-    
-
-    <input typle="button" value="add" onclick="add()">
+    <input type="button" value="add" id="add_button">
     <table>
-        <% for(var o of data){
+        <% for (var o of data){
             %>
             <tr>
                 <td><%=o.id %></td>
@@ -23,24 +21,23 @@
                 <td><%=o.number %></td>
                 <td><%=o.nmessage %></td>
                 <td>
-                    <input type="button" class="upd" data_id="<%=o.idvalue="修改"/>
-                    <input type="button" value="删除"/>
+                    <input type="button" class="u" value="修改" data_id="<%=o.id %>"/>
+                    <input type="button" class="d" value="删除" data_id="<%=o.id %>"/>
                 </td>
             </tr>
             <% }%>
 
     </table>
     <script>
-        function add(){
-            window.location.href ="/admin/add";
-        }
-        Array.from(document.getElementsByClassName("upd")).forEach(i =>{
-            i.onclick = function(){
-                this.getAttribute('data_id');
-
-               window.location.href="/admin/update/"+this.getAttribute('data_id');
-            }
-        })
+        document.getElementById("add_button").onclick = function(){
+       window.location.href='/admin/add';
+}
+Array.from(document.getElementsByClassName("u")).forEach(i =>{
+    i.onclick = function(){
+        
+        window.location.href="/admin/update/"+this.getAttribute('data_id');
+    }
+})
     </script>
     
 </body>

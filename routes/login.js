@@ -41,13 +41,13 @@ connection.connect();
 
  
  router.post('/login', (req, res) => {
-   var selectSQL="select name,pass from login where name = ? and pass = ?"
+  // var selectSQL="select name,pass from login where name = ? and pass = ?"
 
   let a= [req.body.name,req.body.pass]
 
     
 
-    connection.query(selectSQL,a, function (err, result, fields) {
+    db.query("select name,pass from login where name = ? and pass = ?",a, function (err, result, fields) {
 
  if (err) {
             console.log('err', err);

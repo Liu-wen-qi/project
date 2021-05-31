@@ -7,11 +7,13 @@ db.query = function(sql,callback){
         user:"root",
         password:"root",
         database:"project1",
-        debug:ture
+
     });
-con.query(sql,param,(err,results) => {
+con.query(sql,(err,results) => {
+
     callback(err,results);
 });
+
 
 con.end();
 }
@@ -23,14 +25,16 @@ db.queryParam = function(sql,param,callback){
         user:"root",
         password:"root",
         database:"project1",
-        debug:ture
+    
+ 
     });
-    con.query(sql,param,(err,results) => {
+    con.query(sql,param,(err,results) =>{
+
         callback(err,results);
        
     });
+
     con.end();
     }
 
-
-module.exports = db;
+module.exports =db;
