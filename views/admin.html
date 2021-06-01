@@ -10,7 +10,7 @@
         <input type="text" name="search" placeholder="搜索"/>
         <input type="submit"/>     
     </form>
-    <input name="title" type="button" value="add" id="add_button">
+    <input  type="button" value="add" id="add_button">
     <table>
         <% for (var o of data){
             %>
@@ -21,22 +21,29 @@
                 <td><%=o.number %></td>
                 <td><%=o.nmessage %></td>
                 <td>
-                    <input type="button" class="u" value="修改" data_id="<%=o.id %>"/>
-                    <input type="button" class="d" value="删除" data_id="<%=o.id %>"/>
+                    <input type="button" class="u_button" value="修改" data_id="<%=o.id %>"/>
+                    <input type="button" class="d_button" value="删除" data_id="<%=o.id %>"/>
                 </td>
             </tr>
             <% }%>
 
     </table>
     <script>
+        Array.from(document.getElementsByClassName("d_button")).forEach(i=>{
+            i.onclick = function(){
+                window.location.href = '/admin/del/'+this.getAttribute('data_id');;
+                console.log(result);
+            }
+        })
         document.getElementById("add_button").onclick = function(){
             window.location.href='/admin/add';
         }
-        Array.from(document.getElementsByClassName("u")).forEach(i =>{
+        Array.from(document.getElementsByClassName("u_button")).forEach(i =>{
             i.onclick = function(){
                 window.location.href="/admin/update/"+this.getAttribute('data_id');
             }
         })
         </script>
+    
 </body>
 </html>

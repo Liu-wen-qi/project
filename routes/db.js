@@ -8,6 +8,7 @@ db.query = function(sql,callback){
         password:"root",
         database:"project1",
 
+
     });
 con.query(sql,(err,results) => {
 
@@ -25,6 +26,7 @@ db.queryParam = function(sql,param,callback){
         user:"root",
         password:"root",
         database:"project1",
+
     
  
     });

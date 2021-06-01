@@ -5,14 +5,6 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var logger = require('morgan');
 var ejs=require('ejs');
-// var mysql = require('mysql');
-// var connection = mysql.createConnection({
-//   host:'localhost',
-//   user:'root',
-//   port:3306,
-//   password:'root',
-//   database:''
-// });
 
 
 var indexRouter = require('./routes/index');
@@ -98,7 +90,7 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  console.log(err);
   // render the error page
   res.status(err.status || 500);
   res.render('error');
