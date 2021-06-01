@@ -33,7 +33,7 @@ var chartsRouter  = require('./routes/charts');
 
 var backgroundRouter = require('./routes/background');//后台主页面
 var adminRouter = require('./routes/admin');
-var addRouter = require('./routes/add');
+var add1Router = require('./routes/add1');
 var updateRouter = require('./routes/update');
 
 
@@ -69,7 +69,7 @@ app.use('/', loginRouter);
 app.use('/register', registerRouter);
 
 app.use('/team',teamRouter)
-app.use('/add',addRouter);
+app.use('/add1',add1Router);
 app.use('/update',updateRouter);
 
 

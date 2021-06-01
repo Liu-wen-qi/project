@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
 </head>
 <body>
+        <form action ="/admin/update" method="POST"/>   
+        <br/> 
+        <input type="text" name="id" value="<%=obj.id %>" placeholder="id" /> 
+        <br/>
+        <input type="text" name="title" value="<%=obj.title %>" placeholder="title"/>
+        <br/>
+        <input type="text" name="location" value="<%=obj.location %>"  placeholder="location"/>
+        <br/>
+        <input type="text" name="number" value="<%=obj.number %>" placeholder="number"/>
+        <br/>
+        <input type="text" name="nmessage" value="<%=obj.nmessage %>" placeholder="nmessage"/>
+        <br/>
+        <input type="submit" />    
+        </form>
         
-    <form action="/admin/update" method="POST">
-        <br/>
-        
-        <input type="text" name="id" value=<%=obj.id %> placeholder="id" />
-        <br/>
-        <input  type="text" name="title" value=<%=obj.title %> placeholder="title"/>
-        <br/>
-        <input type="text" name="location" value=<%=obj.location %>  placeholder="location"/>
-        <br/>
-        <input type="text" name="number" value=<%=obj.number %>  placeholder="number"/>
-        <br/>
-        <input type="text" name="nmessage" value=<%=obj.nmessage %>  placeholder="nmessage"/>
-        <br/>
-
-
-        
-        <input type="submit"/>
-<!--         <button class="button">提交</button> -->
-    </form>
 </body>
 </html>

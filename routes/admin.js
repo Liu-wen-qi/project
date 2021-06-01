@@ -23,15 +23,16 @@ router.post('/add',(req,res) =>{
         res.redirect('/admin');
     })
 })
+
 router.get('/update/:id',(req,res) =>{
     db.queryParam("select * from tab_explore where id = ?",[req.params.id],(err,result) =>{
         res.render('update',{obj:result[0]});
     })
 });
-
-router.post('/update',(req,res) =>{
-   db.queryParam("update tab_explore set title=?,location=?,number=?,nmessage=? where id = ? ",[req.body.title,req.body.location,req.body.number,req.body.nmessage,req.body.id],(err,result) =>{
-    res.render('/admin');
-   }) 
+router.post('/update',(req,res)=>{
+    db.queryParam("update tab_explore set title=? or location=? or number=? ornmessage=? where id=?",[req.body.title,req.body.location,req.body.number,req.body.nmessage,req.body.id],(err,result)=>{
+        res.redirect('/admin');
+    })
 })
+
 module.exports = router;

@@ -10,7 +10,7 @@
         <input type="text" name="search" placeholder="搜索"/>
         <input type="submit"/>     
     </form>
-    <input type="button" value="add" id="add_button">
+    <input name="title" type="button" value="add" id="add_button">
     <table>
         <% for (var o of data){
             %>
@@ -29,16 +29,14 @@
 
     </table>
     <script>
-        document.getElementById("add_button").onclick = function(){
-       window.location.href='/admin/add';
-}
-Array.from(document.getElementsByClassName("u")).forEach(i =>{
-    i.onclick = function(){
-        
-        window.location.href="/admin/update/"+this.getAttribute('data_id');
-    }
-})
-    </script>
-    
+        document.getElementById("add_button").onclick = function(){
+            window.location.href='/admin/add';
+        }
+        Array.from(document.getElementsByClassName("u")).forEach(i =>{
+            i.onclick = function(){
+                window.location.href="/admin/update/"+this.getAttribute('data_id');
+            }
+        })
+        </script>
 </body>
 </html>

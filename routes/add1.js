@@ -25,6 +25,7 @@ router.get('/', function (req, res) {
         });
   });
 router.post('/', (req, res) => {
+    console.log(req.body.title);
     var insertSql = 'insert into register(name,pass,cpass,sname,phone,email) values(?,?,?,?,?,?)';
     connection.query(insertSql, [req.body.name,req.body.pass,req.body.cpass,req.body.sname,req.body.phone,req.body.email], function (err, result, fields) {
 
